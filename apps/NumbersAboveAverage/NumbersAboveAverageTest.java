@@ -4,6 +4,7 @@ package test;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -16,17 +17,8 @@ class NumbersAboveAverageTest {
 	void should_ThrowNumbersAboveAverage_When_GivenAListOfPositiveNumbers() {
 		NumbersAboveAverage nAA = new NumbersAboveAverage();
 		
-		List<Double> numbers = new ArrayList<>();
-		numbers.add(1.0);
-		numbers.add(4.0);
-		numbers.add(3.0);
-		numbers.add(29.0);
-		numbers.add(41.0);
-		numbers.add(10.0);
-		
-		List<Double> expected = new ArrayList<>();
-		expected.add(29.0);
-		expected.add(41.0);
+		List<Double> numbers = new ArrayList<Double>(Arrays.asList(1.0, 4.0, 3.0, 29.0, 41.0, 10.0));
+		List<Double> expected = new ArrayList<Double>(Arrays.asList(29.0, 41.0));
 		
 		assertEquals(expected, nAA.numbersAboveAverage(numbers));
 	}
@@ -35,20 +27,8 @@ class NumbersAboveAverageTest {
 	void should_ThrowNumbersAboveAverage_When_GivenAListOfNegativeNumbers() {
 		NumbersAboveAverage nAA = new NumbersAboveAverage();
 		
-		List<Double> numbers = new ArrayList<>();
-		numbers.add(-20.0);
-		numbers.add(-90.0);
-		numbers.add(-4.0);
-		numbers.add(-8.0);
-		numbers.add(-10.0);
-		numbers.add(-1.0);
-		
-		List<Double> expected = new ArrayList<>();
-		expected.add(-20.0);
-		expected.add(-4.0);
-		expected.add(-8.0);
-		expected.add(-10.0);
-		expected.add(-1.0);
+		List<Double> numbers = new ArrayList<Double>(Arrays.asList(-20.0, -90.0, -4.0, -8.0, -10.0, -1.0));
+		List<Double> expected = new ArrayList<Double>(Arrays.asList(-20.0, -4.0, -8.0, -10.0, -1.0));
 		
 		assertEquals(expected, nAA.numbersAboveAverage(numbers));
 	}
@@ -56,17 +36,9 @@ class NumbersAboveAverageTest {
 	@Test
 	void should_ThrowNumbersAboveAverage_When_GivenAListOfMixedNumbers() {
 		NumbersAboveAverage nAA = new NumbersAboveAverage();
-		List<Double> numbers = new ArrayList<>();
-		numbers.add(-1.0);
-		numbers.add(4.0);
-		numbers.add(3.0);
-		numbers.add(-29.0);
-		numbers.add(41.0);
-		numbers.add(10.0);
 		
-		List<Double> expected = new ArrayList<>();
-		expected.add(41.0);
-		expected.add(10.0);
+		List<Double> numbers = new ArrayList<Double>(Arrays.asList(-1.0, 4.0, 3.0, -29.0, 41.0, 10.0));
+		List<Double> expected = new ArrayList<Double>(Arrays.asList(41.0, 10.0));
 		
 		assertEquals(expected, nAA.numbersAboveAverage(numbers));
 	}
