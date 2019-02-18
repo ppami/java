@@ -15,6 +15,34 @@ class MergeSortTest {
         List<Integer> expected = new ArrayList<>(Arrays.asList(1, 1, 3, 8, 9, 10, 11));
 
         assertEquals(expected, ms.mergeSort(list));
+    } 
+    
+    @Test
+    void mergeSortForOneElement() {
+        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2));
+        MergeSort ms = new MergeSort();
+        List<Integer> expected = new ArrayList<>(Arrays.asList(1, 2));
+
+        assertEquals(expected, ms.mergeSort(list));
+    }
+    
+    @Test
+    void mergeSortedForOneElement() {
+        List<Integer> listOne = new ArrayList<>(Arrays.asList(1));
+        List<Integer> listTwo = new ArrayList<>(Arrays.asList(2));
+        MergeSort ms = new MergeSort();
+        List<Integer> expectedList = new ArrayList<>(Arrays.asList(1, 2));
+
+        assertEquals(expectedList, ms.mergeSorted(listOne, listTwo));
+    }
+    
+    @Test
+    void mergeSortTwo() {
+        List<Integer> list = new ArrayList<>(Arrays.asList(1, 4, 5, 2, 3, 10, 6, 9, 2, 1));
+        MergeSort ms = new MergeSort();
+        List<Integer> expected = new ArrayList<>(Arrays.asList(1, 1, 2, 2, 3, 4, 5, 6, 9, 10));
+
+        assertEquals(expected, ms.mergeSort(list));
     }
 
     @Test
