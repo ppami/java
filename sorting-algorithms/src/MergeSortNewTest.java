@@ -36,4 +36,28 @@ public class MergeSortNewTest {
 		assertEquals(expected, msn.addRemaining(sortedList, iter));
 		
 	}
+	
+	@Test
+	void when_ItersHave1ElementEachMergeUntilOneEmpty() {
+		MergeSortNew msn = new MergeSortNew();
+		List<Integer> sortedList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+		List<Integer> iterListOne = new ArrayList<>(Arrays.asList(6));
+		List<Integer> iterListTwo = new ArrayList<>(Arrays.asList(7));
+		Iterator<Integer> iterOne = iterListOne.iterator();
+		Iterator<Integer> iterTwo = iterListTwo.iterator();
+		
+		assertEquals(iterTwo, msn.mergeUntilOneEmpty(sortedList, iterOne, iterTwo));
+	}
+	
+	@Test
+	void when_iterOneHasTwoElementsAndIterTwoHasThreeElementsMergeUntilOneEmpty() {
+		MergeSortNew msn = new MergeSortNew();
+		List<Integer> sortedList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+		List<Integer> iterListOne = new ArrayList<>(Arrays.asList(6, 7));
+		List<Integer> iterListTwo = new ArrayList<>(Arrays.asList(6, 7, 8));
+		Iterator<Integer> iterOne = iterListOne.iterator();
+		Iterator<Integer> iterTwo = iterListTwo.iterator();
+		
+		assertEquals(iterTwo, msn.mergeUntilOneEmpty(sortedList, iterOne, iterTwo));
+	}
 }

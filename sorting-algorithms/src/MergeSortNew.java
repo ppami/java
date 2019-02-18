@@ -11,4 +11,9 @@ public class MergeSortNew {
 		
 		return sortedList;
 	}
+	
+	public Iterator<Integer> mergeUntilOneEmpty(List<Integer> sortedList, Iterator<Integer> iterOne, Iterator<Integer> iterTwo) {
+		
+		return null;
+	}
 }
