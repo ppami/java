@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="apps/|sorting/src/main/java/com/pami/sorting/|apps/BubbleSort/|sorting/src/test/java/com/pami/sorting/" kind="src" path=""/>
+	<classpathentry excluding="BubbleSort/" kind="src" path="apps"/>
+	<classpathentry kind="src" path="apps/BubbleSort"/>
+	<classpathentry kind="src" path="sorting/src/main/java/com/pami/sorting"/>
+	<classpathentry kind="src" path="sorting/src/test/java/com/pami/sorting"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
