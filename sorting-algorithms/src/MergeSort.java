@@ -25,7 +25,7 @@ public class MergeSort {
 
         return lists;
     }
-    //@SuppressWarnings("unchecked")
+
     public List<Integer> mergeSorted(List<Integer> listOne, List<Integer> listTwo) {
         List<Integer> sortedList = new ArrayList<>();
 
