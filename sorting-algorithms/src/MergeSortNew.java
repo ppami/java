@@ -12,7 +12,7 @@ public class MergeSortNew {
 		return sortedList;
 	}
 	
-	public Iterator<Integer> mergeUntilOneEmpty(List<Integer> sortedList, Iterator<Integer> iterOne, Iterator<Integer> iterTwo) {
+	public Iterator<Integer> mergeUntilOneEmpty(List<Integer> list, Iterator<Integer> iterOne, Iterator<Integer> iterTwo) {
 		int elementOne = iterOne.next();
 		int elementTwo = iterTwo.next();
 		
@@ -25,10 +25,10 @@ public class MergeSortNew {
 			}
 			
             if (elementOne >= elementTwo) {
-                sortedList.add(elementTwo);
+                list.add(elementTwo);
                 elementTwo = iterTwo.next();
             } else {
-                sortedList.add(elementOne);
+                list.add(elementOne);
                 elementOne = iterOne.next();
             }
             
