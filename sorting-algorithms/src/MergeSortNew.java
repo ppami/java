@@ -13,7 +13,27 @@ public class MergeSortNew {
 	}
 	
 	public Iterator<Integer> mergeUntilOneEmpty(List<Integer> sortedList, Iterator<Integer> iterOne, Iterator<Integer> iterTwo) {
+		int elementOne = iterOne.next();
+		int elementTwo = iterTwo.next();
 		
-		return null;
+		while (true) {
+			
+			if (!iterOne.hasNext()) {
+				return iterTwo;
+			} else if (!iterTwo.hasNext()){
+				return iterOne;
+			}
+			
+            if (elementOne >= elementTwo) {
+                sortedList.add(elementTwo);
+                elementTwo = iterTwo.next();
+            } else {
+                sortedList.add(elementOne);
+                elementOne = iterOne.next();
+            }
+            
+        }
+
+		
 	}
 }
