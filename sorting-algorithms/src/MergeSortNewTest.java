@@ -9,6 +9,14 @@ import org.junit.jupiter.api.Test;
 
 public class MergeSortNewTest {
 	
+	@Test
+	void when_givenList_returnMergedAndSortedListt() {
+		List<Integer> list = new ArrayList<>(Arrays.asList(4, 2, 3, 4, 5, 1));
+		MergeSortNew msn = new MergeSortNew();
+		List<Integer> expected = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 4, 5));
+		assertEquals(expected, msn.mergeSort(list));
+	}
+	
 	@Test 
 	void when_listHasEvenNumberOfElementsSplitList() {
 		List<Integer> list = new ArrayList<>(Arrays.asList(4, 2, 3, 4, 5, 1));
