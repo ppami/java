@@ -36,7 +36,7 @@ public class MergeSortNew {
             
         }
 	}
-	private List<List<Integer>> splitList (List<Integer> list) {
+	public List<List<Integer>> splitList (List<Integer> list) {
 		int size = list.size();
 		List<Integer> listOne = new ArrayList<>(list.subList(0, (size+1)/2));
 	    List<Integer> listTwo = new ArrayList<>(list.subList((size+1)/2, size));
