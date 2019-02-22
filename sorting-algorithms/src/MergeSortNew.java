@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -33,7 +35,13 @@ public class MergeSortNew {
             }
             
         }
+	}
+	private List<List<Integer>> splitList (List<Integer> list) {
+		int size = list.size();
+		List<Integer> listOne = new ArrayList<>(list.subList(0, (size+1)/2));
+	    List<Integer> listTwo = new ArrayList<>(list.subList((size+1)/2, size));
+	    List<List<Integer>> lists = new ArrayList<>(Arrays.asList(listOne, listTwo));
 
-		
+	    return lists;
 	}
 }
