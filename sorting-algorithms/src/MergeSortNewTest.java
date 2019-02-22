@@ -9,6 +9,25 @@ import org.junit.jupiter.api.Test;
 
 public class MergeSortNewTest {
 	
+	@Test 
+	void when_listHasEvenNumberOfElementsSplitList() {
+		List<Integer> list = new ArrayList<>(Arrays.asList(4, 2, 3, 4, 5, 1));
+		List<Integer> listOne = new ArrayList<>(Arrays.asList(4, 2, 3));
+	    List<Integer> listTwo = new ArrayList<>(Arrays.asList(4, 5, 1));
+		List<List<Integer>> expected = new ArrayList<>(Arrays.asList(listOne, listTwo));
+		MergeSortNew msn = new MergeSortNew(); 
+		assertEquals(expected, msn.splitList(list));
+	}
+	@Test 
+	void when_listHasUnevenNumberOfElementsSplitList() {
+		List<Integer> list = new ArrayList<>(Arrays.asList(4, 2, 3, 4, 5));
+		List<Integer> listOne = new ArrayList<>(Arrays.asList(4, 2, 3));
+	    List<Integer> listTwo = new ArrayList<>(Arrays.asList(4, 5));
+		List<List<Integer>> expected = new ArrayList<>(Arrays.asList(listOne, listTwo));
+		MergeSortNew msn = new MergeSortNew(); 
+		assertEquals(expected, msn.splitList(list));
+	}
+	
 	@Test
 	void when_IterHasElementsAddRemaining() {
 		List<Integer> sortedList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
