@@ -9,12 +9,20 @@ import org.junit.jupiter.api.Test;
 
 public class MergeSortNewTest {
 	
-	@Test
+	/*@Test
 	void when_givenList_returnMergedAndSortedListt() {
 		List<Integer> list = new ArrayList<>(Arrays.asList(4, 2, 3, 4, 5, 1));
 		MergeSortNew msn = new MergeSortNew();
 		List<Integer> expected = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 4, 5));
 		assertEquals(expected, msn.mergeSort(list));
+	}*/
+	@Test 
+	void when_givenTwoListsMergeSorted() {
+		List<Integer> listOne = new ArrayList<>(Arrays.asList(4, 2, 3));
+	    List<Integer> listTwo = new ArrayList<>(Arrays.asList(4, 5, 1));
+	    List<Integer> expected = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 4, 5));
+	    MergeSortNew msn = new MergeSortNew(); 
+	    assertEquals(expected, msn.mergeSorted(listOne, listTwo));
 	}
 	
 	@Test 
