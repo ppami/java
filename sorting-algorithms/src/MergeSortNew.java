@@ -4,6 +4,20 @@ import java.util.Iterator;
 import java.util.List;
 
 public class MergeSortNew {
+	
+	public List<Integer> mergeSorted(List<Integer> listOne, List<Integer> listTwo) {
+		
+		Iterator<Integer> iterOne = listOne.iterator();
+		Iterator<Integer> iterTwo = listTwo.iterator();
+		System.out.println(listOne);
+		System.out.println(listTwo);
+		List<Integer> sortedList = new ArrayList<>();
+		mergeUntilOneEmpty(sortedList, iterOne, iterTwo);
+		Iterator<Integer> iter = mergeUntilOneEmpty(sortedList, iterOne, iterTwo);
+		
+		return addRemaining(sortedList, iter);
+	}
+	
 	public List<Integer> addRemaining(List<Integer> sortedList, Iterator<Integer> iter) {
 		int element;
 		while (iter.hasNext()) {
@@ -14,23 +28,24 @@ public class MergeSortNew {
 		return sortedList;
 	}
 	
-	public Iterator<Integer> mergeUntilOneEmpty(List<Integer> list, Iterator<Integer> iterOne, Iterator<Integer> iterTwo) {
+	public Iterator<Integer> mergeUntilOneEmpty(List<Integer> sortedList, Iterator<Integer> iterOne, Iterator<Integer> iterTwo) {
 		int elementOne = iterOne.next();
 		int elementTwo = iterTwo.next();
-		
+
 		while (true) {
 			
 			if (!iterOne.hasNext()) {
 				return iterTwo;
+				
 			} else if (!iterTwo.hasNext()){
 				return iterOne;
 			}
 			
             if (elementOne >= elementTwo) {
-                list.add(elementTwo);
+                sortedList.add(elementTwo);
                 elementTwo = iterTwo.next();
             } else {
-                list.add(elementOne);
+                sortedList.add(elementOne);
                 elementOne = iterOne.next();
             }
             
