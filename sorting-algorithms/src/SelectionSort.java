@@ -3,6 +3,12 @@ import java.util.List;
 
 public class SelectionSort {
 	
+	public void selectionSort(List<Integer> list) {
+		for (int i = 0; i < list.size(); i++) {
+			swap(list, i, findSmallest(list, i));
+		}
+	}
+	
 	public void swap(List<Integer> list, int indexOne, int indexTwo) {
 		Collections.swap(list, indexOne, indexTwo);
 	}

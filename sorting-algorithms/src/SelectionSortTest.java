@@ -8,6 +8,17 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 public class SelectionSortTest {
+	
+	@Test
+	void given_listSelectionSort() {
+		List<Integer> list = new LinkedList<>(Arrays.asList(5, 3, 4, 6, 1, 2));
+		SelectionSort ss = new SelectionSort();
+		ss.selectionSort(list);
+		List<Integer> expected = new LinkedList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+		
+		assertEquals(expected, list);
+	}
+	
 	@Test
 	void given_IndexFindSmallestElement() {
 		List<Integer> list = new LinkedList<>(Arrays.asList(5, 3, 4, 6, 1, 2));
