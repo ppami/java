@@ -1,6 +1,11 @@
+import java.util.Collections;
 import java.util.List;
 
 public class SelectionSort {
+	
+	public void swap(List<Integer> list, int indexOne, int indexTwo) {
+		Collections.swap(list, indexOne, indexTwo);
+	}
 	
 	public int findSmallest(List<Integer> list, int index) {
 		int smallest = index;
@@ -9,9 +14,7 @@ public class SelectionSort {
 			if (list.get(i) < list.get(smallest)) {
 				smallest = i;
 			}
-		}
-		
-		
+		}		
 		return smallest;
 	}
 }
