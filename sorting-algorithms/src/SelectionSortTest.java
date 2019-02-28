@@ -45,7 +45,7 @@ public class SelectionSortTest {
 		int expected = 4;
 		
 		SelectionSort ss = new SelectionSort();
-		assertEquals(expected, ss.findSmallest(list, index));
+		assertEquals(expected, ss.findIndexOfSmallestFromIndex(list, index));
 	}
 	
 }
