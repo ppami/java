@@ -8,6 +8,15 @@ import org.junit.jupiter.api.Test;
 
 public class SelectionSortTest {
 	
+	@Test
+	void given_listWithOneElementSelectionSort() {
+		List<Integer> list = new LinkedList<>(Arrays.asList(1));
+		SelectionSort ss = new SelectionSort();
+		ss.selectionSort(list);
+		List<Integer> expected = new LinkedList<>(Arrays.asList(1));
+		
+		assertEquals(expected, list);
+	}
 	
 	@Test
 	void given_listWithTwoIdenticalElementsSelectionSort() {
