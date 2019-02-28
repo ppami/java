@@ -39,16 +39,4 @@ public class SelectionSortTest {
 		assertEquals(expected, ss.findSmallest(list, index));
 	}
 	
-	@Test 
-	void given_TwoIndicesSwap() {
-		List<Integer> list = new LinkedList<>(Arrays.asList(5, 3, 4, 6, 1, 2));
-		int indexOne = 0;
-		int indexTwo = 4;
-		SelectionSort ss = new SelectionSort();
-		ss.swap(list, indexOne, indexTwo);
-		List<Integer> expected = new LinkedList<>(Arrays.asList(1, 3, 4, 6, 5, 2));
-		
-		assertEquals(expected, list);
-	}
-	
 }
